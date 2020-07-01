@@ -9,7 +9,8 @@ import datetime
 
 app = Flask(__name__)
 
-model = pickle.load(open('car_price_predict.pkl', 'rb'))
+# model = pickle.load(open('car_price_predict.pkl', 'rb'))
+model = pickle.load(open('car_price_predict1.pkl', 'rb'))
 
 
 @app.route('/')
