@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+       <style>
+            input[type=text], select {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+            input[type=number], select {
+              width: 100%;
+              padding: 12px 20px;
+              margin: 8px 0;
+              display: inline-block;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              box-sizing: border-box;
+            }
+
+            input[type=submit] {
+              width: 100%;
+              background-color: #4CAF50;
+              color: white;
+              padding: 14px 20px;
+              margin: 8px 0;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+            }
+
+            input[type=submit]:hover {
+              background-color: #45a049;
+            }
+
+            div {
+              border-radius: 5px;
+              background-color: #f2f2f2;
+              padding: 20px;
+            }
+       </style>
+    </head>
+  <body>
+
+
+    <div>
+      <form action="{{ url_for('predict')}}" method="post">
+        <label for="fname">Year</label>
+        <select id="year" name="year">
+          <option value="2000">2000</option>
+          <option value="2001">2001</option>
+          <option value="2002">2002</option>
+          <option value="2003">2003</option>
+          <option value="2004">2004</option>
+          <option value="2005">2005</option>
+          <option value="2006">2006</option>
+          <option value="2007">2007</option>
+          <option value="2008">2008</option>
+          <option value="2009">2009</option>
+          <option value="2010">2010</option>
+          <option value="2011">2011</option>
+          <option value="2012">2012</option>
+          <option value="2013">2012</option>
+          <option value="2014">2014</option>
+          <option value="2015">2015</option>
+          <option value="2016">2016</option>
+          <option value="2017">2017</option>
+          <option value="2018">2018</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+
+        </select>
+
+        <label for="lname">Actual price (in lakh) </label>
+        <input type="number" step="any" id="aprice" name="aprice" placeholder="showroom price">
+
+        <label for="total km">total km</label>
+        <input type="number" id="km" name="km" placeholder="total km of vehicle">
+
+        <label for="owner">on of owners </label>
+        <select id="owner" name="owner">
+          <option value="0">First owner</option>
+          <option value="1">Second owner</option>
+          <option value="3">Third owner</option>
+        </select>
+
+        <label for="country">Fuel Type</label>
+        <select id="Fuel" name="Fuel">
+          <option value="0">Petrol</option>
+          <option value="1">Diesel</option>
+          <option value="2">CNG</option>
+        </select>
+
+        <label for="otype">Dealer or Individual</label>
+        <select id="otype" name="otype">
+          <option value="0">Dealer</option>
+          <option value="1">Individual</option>
+        </select>
+
+          <label for="trans">Transmission</label>
+        <select id="trans" name="trans">
+          <option value="0">Manual</option>
+          <option value="1">Automatic</option>
+        </select>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+
+    <br><br><h3>{{ output }}</h3>
+    </div>
+
+
+  </body>
+</html>
