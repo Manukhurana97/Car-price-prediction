@@ -28,12 +28,12 @@ def predict():
         no = datetime.datetime.now()
         no_of_year = no.year - year
         Actualprice = request.form['aprice']
-        km = request.form['km']
+        km_driven = request.form['km']
         owner = request.form['owner']
         Fuel = request.form['Fuel']
-        otype = request.form['otype']
-        trans = request.form['trans']
-        predict = model.predict([[no_of_year, Actualprice, km, owner, Fuel, otype, trans]])
+        Seller_Type = request.form['otype']
+        Transmission = request.form['trans']
+        predict = model.predict([[Actualprice, km_driven, Fuel,  Seller_Type, Transmission, owner, no_of_year]])
         print(predict)
         if predict < 0:
             return render_template('index.html', output = "Sorry you cannot sell this car")
